@@ -26,15 +26,19 @@ leadgen-app/
 
 ## Setup
 
+```bash
+winget install Python.Python.3.12           #if using python version above 3.12
+```
+
 ### 1. Backend
 
 ```bash
 cd backend
-python3 -m venv venv
+py -3.12 -m venv venv
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-playwright install chromium       # only needed if you use the browser fallback
+playwright install chromium       # only needed if you use the browser fallback You can skip it at first
 uvicorn app.main:app --reload --port 8000
 ```
 
@@ -46,7 +50,7 @@ In a second terminal:
 
 ```bash
 cd frontend
-python3 -m venv venv
+py -3.12 -m venv venv
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
