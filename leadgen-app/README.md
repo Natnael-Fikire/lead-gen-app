@@ -31,7 +31,8 @@ leadgen-app/
 ```bash
 cd backend
 python3 -m venv venv
-source venv/bin/activate          # Windows: venv\Scripts\activate
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 playwright install chromium       # only needed if you use the browser fallback
 uvicorn app.main:app --reload --port 8000
@@ -46,7 +47,8 @@ In a second terminal:
 ```bash
 cd frontend
 python3 -m venv venv
-source venv/bin/activate
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+.\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
